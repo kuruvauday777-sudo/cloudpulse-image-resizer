@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CloudPulse Image Resizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="hero">
+            <div class="logo">☁️</div>
+
+            <h1>CloudPulse Image Resizer</h1>
+
+            <p>
+                Upload an image and let AWS resize it automatically.
+            </p>
+        </header>
+
+
+        <section class="upload-card">
+
+            <div class="upload-area" id="uploadArea">
+
+                <div class="upload-icon">📤</div>
+
+                <h2>Upload your image</h2>
+
+                <p>
+                    JPG, PNG or WebP
+                </p>
+
+                <label class="choose-button">
+                    Choose Image
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                    >
+                </label>
+
+            </div>
+
+
+            <div
+                class="file-info hidden"
+                id="fileInfo"
+            >
+                <div>
+                    <strong>Selected file</strong>
+                    <span id="fileName"></span>
+                </div>
+
+                <div>
+                    <strong>Size</strong>
+                    <span id="fileSize"></span>
+                </div>
+            </div>
+
+
+            <button
+                id="uploadButton"
+                class="upload-button"
+                disabled
+            >
+                Upload & Resize
+            </button>
+
+
+            <div
+                id="status"
+                class="status hidden"
+            ></div>
+
+
+            <div
+                id="result"
+                class="result hidden"
+            >
+                <h3>Processing Complete 🎉</h3>
+
+                <p id="resultMessage"></p>
+
+                <a
+                    id="downloadButton"
+                    class="download-button"
+                    href="#"
+                    target="_blank"
+                >
+                    Download Resized Image
+                </a>
+            </div>
+
+        </section>
+
+
+        <section class="architecture">
+
+            <h2>How it works</h2>
+
+            <div class="flow">
+
+                <div>🌐 Frontend</div>
+
+                <span>→</span>
+
+                <div>⚡ API Gateway</div>
+
+                <span>→</span>
+
+                <div>λ Upload Lambda</div>
+
+                <span>→</span>
+
+                <div>🪣 S3</div>
+
+                <span>→</span>
+
+                <div>λ Resizer</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        CloudPulse • AWS Serverless Image Processing
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

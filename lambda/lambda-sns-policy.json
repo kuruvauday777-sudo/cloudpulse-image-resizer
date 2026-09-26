@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublishImageProcessingNotification",
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:ap-south-1:<AWS_ACCOUNT_ID>:cloudpulse-image-processing-notifications"
+    }
+  ]
+}
